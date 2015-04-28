@@ -3,12 +3,20 @@ A simple utility for watching changes in .tex, .sty and .bib files and rebuildin
 
 ## Installation
 
+Set the prefix for npm global installation:
+
 ```bash
-npm install xelatex-watcher
+npm config set prefix ~/<your/directory>
 ```
+
+```bash
+npm install xelatex-watcher -g
+```
+
+Set the alias to `~/<your/directory/>/bin/xelatex-watcher` command.
 
 ## Usage
 
 ```
-node_modules/.bin/xelatex-watcher <main.tex>
+xelatex-watcher <main.tex>
 ```
