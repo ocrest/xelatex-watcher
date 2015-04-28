@@ -13,7 +13,7 @@ npm config set prefix ~/<your/directory>
 npm install xelatex-watcher -g
 ```
 
-Set the alias to `~/<your/directory/>/bin/xelatex-watcher` command.
+Set the alias to `~/<your/directory>/bin/xelatex-watcher` command.
 
 ## Usage
 

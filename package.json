@@ -1,6 +1,6 @@
 {
   "name": "xelatex-watcher",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A simple utility for watching changes in .tex, .sty and .bib files and rebuilding the main XeLaTeX document",
   "main": "watcher.js",
   "scripts": {
