@@ -7,7 +7,8 @@ var spawn = require( 'child_process' ).spawn;
 var c = require( 'colors' );
 var Q = require( 'q' );
 
-var main = process.argv[ 2 ] || 'main';
+var main = process.argv[ 2 ] || 'main.tex';
+var main_path = path.dirname( main ) + '/' + path.basename( main, '.tex' );
 var pattern = '**/*.{tex,sty,bib}';
 var watcher = new gaze( pattern );
 
@@ -30,12 +31,12 @@ function deferredSpawn( command, args ){
 }
 
 function xelatex(){
-    return deferredSpawn( 'xelatex', [ '--halt-on-error', '--interaction=nonstopmode', main + '.tex' ] );
+    return deferredSpawn( 'xelatex', [ '--halt-on-error', '--interaction=nonstopmode', main_path + '.tex' ] );
 }
 function pybtex( changed_file ){
     if( ! changed_file || path.extname( changed_file ) !== '.bib' )
         return Q.resolve();
-    return deferredSpawn( 'pybtex', [ main + '.aux' ] ).then( xelatex ).then( xelatex );
+    return deferredSpawn( 'pybtex', [ main_path + '.aux' ] ).then( xelatex ).then( xelatex );
 }
 
 function rebuild( event, filepath ){
