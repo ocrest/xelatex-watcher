@@ -1,0 +1,19 @@
+{
+  "name": "xelatex-watcher",
+  "version": "0.0.0",
+  "description": "A simple utility for watching changes in .tex, .sty and .bib files and rebuilding the main XeLaTeX document",
+  "main": "watcher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+      "xelatex-watcher": "watcher.js"
+  },
+  "author": "Daniil Filippov <filippovdaniil@gmail.com> (http://daniilfilippov.ru/)",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.0.3",
+    "gaze": "^0.5.1",
+    "q": "^1.3.0"
+  }
+}
